@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <title>Document</title>
+  <script>
+    let localS = localStorage.getItem('theme')
+      themeToSet = localS
+
+    //If local storage is not set, we check the OS preference  
+    if (!localS) {
+      themeToSet = window.matchMedia('(preferens-color-scheme: dark)').matches ? 'dark' : 'light'
+    }
+  </script>
+</head>
+<body>
+  <div class="main-container">
+    <header>
+      <div id="nav-left-side">
+        <a>corvuss</a>
+      </div>
+      <div id="nav-mid-side">
+        <div id="nav-links">
+            <a href="#about-me">обо мне</a>
+            <a href="#proj-1">проекты</a>
+        </div>
+      </div>
+      <div id="nav-right-side">
+          <div id="theme-switcher">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" id="icon-sun">
+              <path d="M14 19.1258C16.8308 19.1258 19.1257 16.8309 19.1257 14.0001C19.1257 11.1692 16.8308 8.87439 14 8.87439C11.1692 8.87439 8.87432 11.1692 8.87432 14.0001C8.87432 16.8309 11.1692 19.1258 14 19.1258Z"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M7.72678 14.0001C7.72678 10.5355 10.5354 7.72685 14 7.72685C17.4646 7.72685 20.2732 10.5355 20.2732 14.0001C20.2732 17.4647 17.4646 20.2733 14 20.2733C10.5354 20.2733 7.72678 17.4647 7.72678 14.0001ZM14 10.0219C11.8029 10.0219 10.0219 11.803 10.0219 14.0001C10.0219 16.1971 11.8029 17.9782 14 17.9782C16.1971 17.9782 17.9781 16.1971 17.9781 14.0001C17.9781 11.803 16.1971 10.0219 14 10.0219Z"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M14 0C14.6338 0 15.1475 0.513772 15.1475 1.14754V4.17705C15.1475 4.81082 14.6338 5.32459 14 5.32459C13.3662 5.32459 12.8525 4.81082 12.8525 4.17705V1.14754C12.8525 0.513772 13.3662 0 14 0Z"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M4.10003 4.09998C4.54817 3.65184 5.27475 3.65184 5.72289 4.09998L7.86497 6.24206C8.31311 6.6902 8.31311 7.41678 7.86497 7.86493C7.41683 8.31307 6.69025 8.31307 6.2421 7.86493L4.10003 5.72285C3.65188 5.27471 3.65188 4.54812 4.10003 4.09998Z"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0 14C0 13.3662 0.513772 12.8525 1.14754 12.8525H4.17705C4.81082 12.8525 5.32459 13.3662 5.32459 14C5.32459 14.6338 4.81082 15.1475 4.17705 15.1475H1.14754C0.513772 15.1475 0 14.6338 0 14Z"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M7.86497 20.1349C8.31311 20.5831 8.31311 21.3097 7.86497 21.7578L5.72289 23.8999C5.27475 24.348 4.54817 24.348 4.10003 23.8999C3.65188 23.4517 3.65188 22.7252 4.10003 22.277L6.2421 20.1349C6.69025 19.6868 7.41683 19.6868 7.86497 20.1349Z"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M14 22.6753C14.6338 22.6753 15.1475 23.1891 15.1475 23.8229V26.8524C15.1475 27.4862 14.6338 27.9999 14 27.9999C13.3662 27.9999 12.8525 27.4862 12.8525 26.8524V23.8229C12.8525 23.1891 13.3662 22.6753 14 22.6753Z"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M20.135 20.1349C20.5832 19.6868 21.3097 19.6868 21.7579 20.1349L23.9 22.277C24.3481 22.7252 24.3481 23.4517 23.9 23.8999C23.4518 24.348 22.7252 24.348 22.2771 23.8999L20.135 21.7578C19.6869 21.3097 19.6869 20.5831 20.135 20.1349Z"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M22.6754 14C22.6754 13.3662 23.1892 12.8525 23.823 12.8525H26.8525C27.4862 12.8525 28 13.3662 28 14C28 14.6338 27.4862 15.1475 26.8525 15.1475H23.823C23.1892 15.1475 22.6754 14.6338 22.6754 14Z"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M23.9 4.09998C24.3481 4.54812 24.3481 5.27471 23.9 5.72285L21.7579 7.86493C21.3097 8.31307 20.5832 8.31307 20.135 7.86493C19.6869 7.41678 19.6869 6.6902 20.135 6.24206L22.2771 4.09998C22.7252 3.65184 23.4518 3.65184 23.9 4.09998Z"/>
+            </svg>
+              
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" id="icon-moon">
+              <path d="M12.8935 6.77554C12.7443 5.03569 13.4781 1.67816 13.9851 0C13.6642 0.0306708 13.3432 0.061342 13.0053 0.0935857C10.4168 0.337816 7.94067 1.2686 5.84377 2.78571C3.74696 4.30283 2.10893 6.34868 1.10609 8.70291C0.103258 11.057 -0.226366 13.6304 0.152834 16.1456C0.532035 18.6608 1.60566 21.0224 3.258 22.9762C4.91025 24.93 7.07871 26.4018 9.52955 27.233C11.9805 28.0642 14.6209 28.2233 17.1664 27.6932C19.7119 27.1631 22.066 25.9639 23.975 24.2248C25.884 22.4857 27.2757 20.2725 28 17.8238C24.3735 17.933 18.9007 17.1493 16.1966 14.799C13.4925 12.4487 13.2102 10.3119 12.8935 6.77554Z"/>
+              </svg>
+          </div>
+      </div>
+    </header>
+
+    <div id="body-content" class="flex-column">
+      <section>
+        <div id="main-page" class="flex-row centered-v">
+          <div id="header-text">
+            <span style="color: #1556D4">портфолио</span>
+            <span style="color: #132644">веб дизайнера</span>
+          </div>
+          <div id="tags">
+              <div class="a" id="tag">
+                <a>ui/ux</a>
+              </div>
+              <div class="b" id="tag">
+                <a>дизайн</a>
+              </div>
+              <div class="c" id="tag">
+                <a>лендинги</a>
+              </div>
+              <div class="e" id="tag">
+                <a>сайты</a>
+              </div>
+        </div>
+    </div>
+      </section>
+      
+      <section>
+        <div id="about-me" class="block flex-row centered-v">
+          <div id="info">
+            <div id="photo">
+              <img src="/static/img/real-img.png">
+            </div>
+            <div class="info-block">
+              <div id="header-text">
+                <h3>обо мне</h3>
+              </div>
+              <a>text</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div id="skills" class="block flex-row centered-v">
+          <div id="info-skills" >
+          <div class="skills-box">
+            <h3>скиллы</h3>
+            <div id="icons-box">
+              <img src="/static/img/icons/figma.svg">
+              <img src="/static/img/icons/js.svg">
+              <img src="/static/img/icons/photoshop.svg">
+              <img src="/static/img/icons/adobe-illustrator.svg">
+              <img src="/static/img/icons/html.svg">
+              <img src="/static/img/icons/css.svg">
+            </div>
+          </div>
+  
+          <div id="info-box" class="flex-row centered-v">
+            <div class="education-box">
+              <h3>образование</h3>
+              <span>2020-2023</span><br>
+              <span>Колледж Вятского государсвенного университета</span><br>
+              <a>Информационные системы и программирование</a><br>
+            </div>
+  
+          <div class="project-info">
+              <h3>проекты</h3>
+              <div class="projects-container">
+                <div id="project-box">
+                  <img src="/static/img/projects/proj-1.png">
+                </div>
+  
+                <div id="project-box">
+                  <img src="/static/img/projects/proj-2.png">
+                </div>
+  
+                <div id="project-box" class="flex-row">
+                  <img src="/static/img/projects/proj-3.png">
+                </div>
+              </div>
+          </div>
+  
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div id="proj-1" class="flex-row centered-v">
+          <div id="info">
+            <div id="photo">
+              <img src="/static/img/projects/img-proj-1.png">
+            </div>
+            <div class="info-block">
+              <div id="header-text">
+                <h4>игра boggle</h4>
+              </div>
+              <div class="discription">
+                <a>text</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div id="proj-2" class="flex-row centered-v">
+          <div id="info">
+            <div class="info-block">
+              <div id="header-text">
+                <h4>интернет-магазин для ювелирной мастерской</h4>
+              </div>
+              <a>text</a>
+            </div>
+            <div id="photo">
+              <img src="/static/img/projects/img-proj-2.png">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div id="proj-3" class="block flex-row centered-v">
+          <div id="info">
+            <div id="photo">
+              <img src="/static/img/projects/">
+            </div>
+            <div class="info-block">
+              <div id="header-text">
+                <h4></h4>
+              </div>
+              <div class="discription">
+                <a>text</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+    </div>
+
+
+
+
+    
+    
+    
+  </div>
+  <script src="/static/js/switch.js">
+  </script>
+</body>
+</html>
