@@ -9,16 +9,10 @@ app = Flask(__name__)
 def get():
 
      return get_person_info(), 200
-    #return "Quote not found", 404
-
-
-
+     
 app.config['CORS_HEADERS'] = 'Content-Type'
-
 cors = CORS(app, resources={r"/": {"origins": "https://04b7-178-178-92-202.ngrok-free.app"}})
-
 api = Api(app)
-
 
 if __name__ == '__main__':
     app.run(debug=True)
