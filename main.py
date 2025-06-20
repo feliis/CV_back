@@ -5,13 +5,12 @@ from  database import get_person_info
 
 app = Flask(__name__)
 @app.route('/main', methods=['GET'])
-@cross_origin(origin='https://04b7-178-178-92-202.ngrok-free.app', headers=['Content- Type', 'Authorization'])
 def get():
 
      return get_person_info(), 200
      
 app.config['CORS_HEADERS'] = 'Content-Type'
-cors = CORS(app, resources={r"/": {"origins": "https://04b7-178-178-92-202.ngrok-free.app"}})
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 api = Api(app)
 
 if __name__ == '__main__':
